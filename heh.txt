@@ -1,0 +1,31 @@
+content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  /* Gradient for left & right */
+  background: 
+        /* Left fade */ linear-gradient(
+      90deg,
+      rgba(30, 30, 30, 1) 0%,
+      rgba(30, 30, 30, 0) 50%,
+      rgba(30, 30, 30, 0) 50%,
+      rgba(30, 30, 30, 1) 100%
+    ),
+    /* Top fade */
+      linear-gradient(0deg, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0) 20%),
+    /* Bottom fade */
+      linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0) 20%);
+
+  /* Adjust fade width */
+  background-size: 
+      /* Left & right gradient covers full width */ 100% 100%,
+    /* Top gradient height */ 100% 100%, /* Bottom gradient height */ 100% 100%;
+
+  background-repeat: no-repeat;
+  background-position: 
+    /* Left & right gradient position */ 0 0,
+    /* Top gradient position */ 0 0, /* Bottom gradient position */ 0 100%;

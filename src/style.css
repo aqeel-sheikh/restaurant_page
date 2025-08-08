@@ -1,0 +1,311 @@
+@font-face {
+  font-family: "lavishly_yours";
+  src: url("./fonts/lavishlyYours/lavishlyyours-regular-webfont.woff2")
+      format("woff2"),
+    url("./fonts/lavishlyYours/lavishlyyours-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "cinzel";
+  src: url("./fonts/cinzel/cinzel.woff2") format("woff2"),
+    url("./fonts/cinzel/cinzel.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "source-serif";
+  src: url("./fonts/sourceserif/sourceserif.woff2") format("woff2"),
+    url("./fonts/sourceserif/sourceserif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/roboto/roboto.woff2") format("woff2"),
+    url("./fonts/roboto/roboto.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "cinzel-deco";
+  src: url("./fonts/cinzel_decorative/cinzeldecorative.woff2") format("woff2"),
+    url("./fonts/cinzel_decorative/cinzeldecorative.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: #1e1e1e;
+  color: #dfdbd7;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+header {
+  background: url(./images/headerbg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  background: 
+        /* Left fade */ linear-gradient(
+      90deg,
+      rgba(30, 30, 30, 1) 0%,
+      rgba(30, 30, 30, 0) 50%,
+      rgba(30, 30, 30, 0) 50%,
+      rgba(30, 30, 30, 1) 100%
+    ),
+    /* Top fade */
+      linear-gradient(0deg, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0) 100%),
+    /* Bottom fade */
+      linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0) 20%);
+
+  /* Adjust fade width */
+  background-size: 
+      /* Left & right gradient covers full width */ 100% 100%,
+    /* Top gradient height */ 100% 100%, /* Bottom gradient height */ 100% 100%;
+
+  background-repeat: no-repeat;
+  background-position: 
+    /* Left & right gradient position */ 0 0,
+    /* Top gradient position */ 0 0, /* Bottom gradient position */ 0 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.logo {
+  width: 70px;
+}
+.nav-btns {
+  margin-left: 130px;
+}
+.btn {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-align: center;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background: none;
+}
+.nav-btns .btn {
+  border: none;
+  font-family: cinzel, sans-serif;
+  color: #dfdbd7;
+  font-size: 1.5rem;
+}
+.nav-btns .btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 80%;
+  height: 1px;
+  background: #dfdbd7;
+  transition: transform 0.3s ease;
+}
+.nav-btns .btn:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.nav-btns .btn:active::after {
+  transform: translateX(-50%) scaleX(0.1);
+}
+.ctaBtn,
+.menu-btn {
+  box-shadow: 1px 1px 5px #f5be32;
+  border: 1px solid #f5be32;
+}
+.ctaBtn {
+  color: #f5be32;
+}
+.ctaBtn::before,
+.menu-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f5be32;
+  transition: height 0.3s ease;
+  z-index: 0;
+}
+.ctaBtn::before {
+  height: 0;
+}
+
+.ctaBtn:hover::before {
+  height: 100%;
+}
+
+.ctaBtn:hover {
+  color: #1e1e1e;
+}
+.ctaBtn span,
+.menu-btn span {
+  position: relative;
+  z-index: 1;
+}
+.ctaBtn:active,
+.menu-btn:active {
+  transform: scale(0.97);
+}
+.menu-btn {
+  margin-top: 15px;
+  color: #1e1e1e;
+}
+.menu-btn::before {
+  height: 100%;
+}
+.menu-btn:hover::before {
+  height: 0;
+}
+.menu-btn:hover {
+  color: #f5be32;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 3;
+}
+.fancy-para {
+  font-family: lavishly_yours;
+  max-width: 260px;
+  font-size: 2rem;
+  letter-spacing: 2.5px;
+}
+.fancy-heading {
+  font-family: cinzel-deco;
+  font-size: 3rem;
+  max-width: 750px;
+  color: #f0cc73;
+}
+.sub-para {
+  max-width: 350px;
+  font-family: cinzel;
+}
+@media (max-width: 768px) {
+  .headerText {
+    padding: 0 16px;
+  }
+  .btns {
+    margin: auto;
+  }
+}
+#content{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.food-card-container {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 1px #f5be3280;
+  width: fit-content;
+}
+.food-card-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.food-card {
+  width: 320px;
+  background-color: #2e2e2e;
+}
+.food-card-container .food-card:nth-child(2){
+  background-color: #1e1e1e;
+}
+.food-card-heading {
+  font-size: 1rem;
+}
+.food-card-description {
+  font-size: 1rem;
+}
+.card-rating-img {
+  width: 150px;
+}
+
+.food-card button {        
+  font-size: 14px;     
+  padding: 5px 7px;        
+}
