@@ -71,10 +71,11 @@ function loadPage() {
   contentText.appendChild(contPara3);
 
   contentContainer.appendChild(contentText);
-
+  
+  // Food Cards 
   const specialMenuFoodCardContainer = document.createElement("div");
   specialMenuFoodCardContainer.classList.add("food-card-container");
-
+  // Card 1
   const smFoodCard1 = document.createElement("div");
   smFoodCard1.classList.add("food-card");
 
@@ -112,7 +113,7 @@ function loadPage() {
     smFoodCardBtnDiv1
   );
   smFoodCard1.append(smFoodCardImg1, smFoodCardTextContainer1);
-
+  // Card 2
   const smFoodCard2 = document.createElement("div");
   smFoodCard2.classList.add("food-card");
 
@@ -150,7 +151,7 @@ function loadPage() {
     smFoodCardBtnDiv2
   );
   smFoodCard2.append(smFoodCardImg2, smFoodCardTextContainer2);
-
+  // Card 3
   const smFoodCard3 = document.createElement("div");
   smFoodCard3.classList.add("food-card");
 
