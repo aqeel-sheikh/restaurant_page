@@ -5,8 +5,9 @@ import loadAbout from "./about.js";
 
 const originalHTML = document.body.innerHTML;
 const originalHeader = document.querySelector("header").innerHTML;
-// loadPage();
-loadMenu();
+
+loadPage();
+
 function attachNavEvents() {
   const navBtns = document.querySelectorAll(".nav-btn");
   const div = document.querySelector("#content");

@@ -7,6 +7,7 @@ function loadMenu() {
   loadNav();
   const contentContainer = document.querySelector("#content");
   const header = document.querySelector("header");
+  header.classList.remove("about-header-bg");
   header.classList.add("menu-header-bg");
   const headerText = document.createElement("div");
   headerText.classList.add("text-container");
@@ -120,7 +121,7 @@ function loadMenu() {
     menuCardTextDescription2,
     menuCardTextPrice2
   );
-  
+
   const mq = window.matchMedia("(max-width: 768px)");
   function handleAppendOnScreenChnage(e) {
     if (e.matches) {
