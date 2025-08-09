@@ -4,9 +4,8 @@ import salmonLuxe from "./images/SalmonLuxe.jpg";
 import crimsonRoast from "./images/CrimsonRoast.jpg";
 import ratingStars from "./images/5stars.png";
 
-function loadPage() {
-  const contentContainer = document.querySelector("#content");
-  const header = document.querySelector("header");
+
+export function loadNav () {
   const nav = document.querySelector("nav");
 
   const logo = document.createElement("img");
@@ -21,7 +20,11 @@ function loadPage() {
 
   nav.insertBefore(logo, nav.firstChild);
   nav.appendChild(ctaBtn);
-
+}
+function loadPage() {
+  loadNav ()
+  const contentContainer = document.querySelector("#content");
+  const header = document.querySelector("header");
   const headerText = document.createElement("div");
   headerText.classList.add("text-container");
 
@@ -47,7 +50,6 @@ function loadPage() {
 
   headerText.append(headerPara1, headerPara2, headerPara3, menuBtn);
   header.appendChild(headerText);
-
   // Content Section
   const contentText = document.createElement("div");
   contentText.classList.add("text-container");

@@ -103,6 +103,7 @@ header {
   overflow: hidden;
   position: relative;
 }
+
 header::before {
   content: "";
   position: absolute;
@@ -160,13 +161,23 @@ nav {
   transition: color 0.3s ease;
   background: none;
 }
-.nav-btns .btn {
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f5be32;
+  transition: height 0.3s ease;
+  z-index: 0;
+}
+.nav-btn {
   border: none;
   font-family: cinzel, sans-serif;
   color: #dfdbd7;
   font-size: 1.5rem;
 }
-.nav-btns .btn::after {
+.nav-btn::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -178,11 +189,14 @@ nav {
   background: #dfdbd7;
   transition: transform 0.3s ease;
 }
-.nav-btns .btn:hover::after {
+.nav-btn:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
-.nav-btns .btn:active::after {
+.nav-btn:active::after {
   transform: translateX(-50%) scaleX(0.1);
+}
+.active-btn {
+  color: #f5be32;
 }
 .ctaBtn,
 .menu-btn {
@@ -192,35 +206,27 @@ nav {
 .ctaBtn {
   color: #f5be32;
 }
+
 .ctaBtn::before,
-.menu-btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: #f5be32;
-  transition: height 0.3s ease;
-  z-index: 0;
-}
-.ctaBtn::before {
+.menu-page-button::before {
   height: 0;
 }
 
-.ctaBtn:hover::before {
+.ctaBtn:hover::before,
+.menu-page-button:hover::before {
   height: 100%;
 }
 
-.ctaBtn:hover {
+.ctaBtn:hover, .menu-page-button:hover {
   color: #1e1e1e;
 }
-.ctaBtn span,
-.menu-btn span {
+.btn span {
   position: relative;
   z-index: 1;
 }
 .ctaBtn:active,
-.menu-btn:active {
+.menu-btn:active,
+.menu-page-button:active {
   transform: scale(0.97);
 }
 .menu-btn {
@@ -266,11 +272,11 @@ nav {
   .headerText {
     padding: 0 16px;
   }
-  .btns {
+  .nav-btns {
     margin: auto;
   }
 }
-#content{
+#content {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -281,6 +287,7 @@ nav {
   justify-content: center;
   box-shadow: 0 0 1px #f5be3280;
   width: fit-content;
+  flex-wrap: wrap;
 }
 .food-card-text-container {
   display: flex;
@@ -292,7 +299,7 @@ nav {
   width: 320px;
   background-color: #2e2e2e;
 }
-.food-card-container .food-card:nth-child(2){
+.food-card-container .food-card:nth-child(2) {
   background-color: #1e1e1e;
 }
 .food-card-heading {
@@ -305,7 +312,30 @@ nav {
   width: 150px;
 }
 
-.food-card button {        
-  font-size: 14px;     
-  padding: 5px 7px;        
+.food-card button {
+  font-size: 14px;
+  padding: 5px 7px;
+}
+/* Menu Page */
+.menu-header-bg {
+  background: url(./images/menuHeaderBg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.menu-buttons-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.menu-page-button {
+  color: #dfdbd7;
+  border: 1px solid #2e2e2e;
+  box-shadow: 
+    0 2px 2px rgba(0, 0, 0, 0.1), /* Soft top shadow */
+    0 4px 6px rgba(0, 0, 0, 0.5);
+    font-family: cinzel;
+}
+.button-selected {
+  background-color: #f5be32;
+  color: #1e1e1e;
 }
